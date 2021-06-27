@@ -31,6 +31,11 @@ class RTBCountdownWidget {
 
     this.checkInit().then(() => {
       let el = document.getElementById(el_id);
+
+      if (el == null) {
+        el = el_id;
+      }
+
       el.style.width = "100%";
       self.banner = document.createElement("iframe");
       self.banner.style.width = "100%";
