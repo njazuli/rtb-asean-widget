@@ -46,7 +46,8 @@ function receiveMessage(event) {
   //event.source.postMessage({ status: 'ok', message: 'woot'}, event.origin);
 
   function time(date) {
-    var endtime = Date.parse(date);
+    // var endtime = Date.parse(date);
+    var endtime = new Date(date.replace(" ", "T")).getTime();
     var today = new Date().getTime();
     var t = endtime - new Date().getTime();
 
