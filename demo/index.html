@@ -84,31 +84,11 @@
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="../rtb-countdown-widget.js?nocache"></script>
     <script>
-      var $window = $(window);
-
-      function checkWidthForWidget() {
-        var windowsize = $window.width();
-        if (windowsize < 480) {
-          $("#banner").height(900);
-        } else if (windowsize >= 480 && windowsize < 768) {
-          $("#banner").height(980);
-        } else if (windowsize >= 768 && windowsize < 991) {
-          $("#banner").height(580);
-        } else if (windowsize >= 991 && windowsize < 1200) {
-          $("#banner").height(350);
-        } else {
-          $("#banner").height(310);
-        }
-      }
-
-      checkWidthForWidget();
-      $(window).resize(checkWidthForWidget);
-
       // local link
+      // http://localhost:5500/
       var rtbaseanwidget = new RTBCountdownWidget(
         "https://njazuli.github.io/rtb-asean-widget/"
       );
-      // var wsmwidget = new WSMWidgets('https://wsmwidget.mediaprimalabs.com');
       rtbaseanwidget.loadBanner("banner");
     </script>
 

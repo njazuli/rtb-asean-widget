@@ -1,12 +1,6 @@
 class RTBCountdownWidget {
   constructor(url) {
     let self = this;
-    self.geolocation = { lat: "", long: "" };
-    self.zonecode = [];
-    self.sunrise = "";
-    self.sunset = "";
-    self.day = false;
-    self.scriptsLoaded = false;
     self.promises = [];
     self.url = url;
 
