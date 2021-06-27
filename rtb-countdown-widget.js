@@ -1,5 +1,3 @@
-$(function () {});
-
 class RTBCountdownWidget {
   constructor(url) {
     let self = this;
