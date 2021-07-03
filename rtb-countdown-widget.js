@@ -47,7 +47,7 @@ class RTBCountdownWidget {
 
       self.banner.addEventListener("load", function (e) {
         self.banner.contentWindow.postMessage(
-          { action: "widgetenddate", data: { date: "2021-07-30 09:00:00" } },
+          { action: "widgetenddate", data: { date: "2021-10-26 00:00:00" } },
           self.url
         );
       });
