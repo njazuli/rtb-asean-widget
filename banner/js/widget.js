@@ -47,6 +47,7 @@ function receiveMessage(event) {
 
   function time(date) {
     // var endtime = Date.parse(date);
+
     var endtime = new Date(date.replace(" ", "T")).getTime();
     var today = new Date().getTime();
     var t = endtime - new Date().getTime();
@@ -55,6 +56,13 @@ function receiveMessage(event) {
     var min = Math.floor((t / 1000 / 60) % 60);
     var hour = Math.floor((t / (1000 * 60 * 60)) % 24);
     var days = Math.floor(t / (1000 * 60 * 60 * 24));
+
+    if (days >= 100) {
+      days = ("0" + days).substr(-3);
+    } else {
+      days = ("0" + days).substr(-2);
+    }
+
     if (today >= endtime) {
       $(".container-widget").empty();
       clearInterval(interval);
@@ -64,9 +72,7 @@ function receiveMessage(event) {
     $(".days")
       .empty()
       .append(
-        `<span class="date-text text-center">${("0" + days).substr(
-          -2
-        )}</span><span class="date-small-text text-center">Days</span>`
+        `<span class="date-text text-center">${days}</span><span class="date-small-text text-center">Days</span>`
       );
 
     $(".hours")
@@ -95,7 +101,6 @@ function receiveMessage(event) {
   }
 
   if (event.data.action == "widgetenddate") {
-    console.log(JSON.stringify(event.data.data.date));
     var dateRelated = event.data.data.date;
     setInterval(() => {
       time(dateRelated);
