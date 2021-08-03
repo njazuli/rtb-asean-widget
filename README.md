@@ -1,14 +1,24 @@
-# README #
+### include this script at the bottom of the page
 
-## USAGE ##
+<script src="https://njazuli.github.io/rtb-asean-widget/rtb-countdown-widget.js?nocache"></script>
 
-- Include wsmwidget.js in the root folder in the page
+### initialize class to load banner
 
-- Initialize the widget `var wsmwidget = new WSMWidgets('<widget-url>')`
+<script>
+    var rtbaseanwidget = new RTBCountdownWidget(
+    "https://njazuli.github.io/rtb-asean-widget/"
+    );
+    rtbaseanwidget.loadBanner("banner");
+</script>
 
-- Load banner into element `wsmwidget.loadBanner('banner')`
+### include this script at the bottom of the page. This script is important to ensure that the widget follow the browser's responsiveness
 
-
-## Example ##
-
-Example in demo/index.html
+<script src="https://njazuli.github.io/rtb-asean-widget/banner/js/iframeResizer.min.js"></script>
+<script>
+    iFrameResize({
+    log: false,
+    inPageLinks: true,
+    onResized: function (messageData) {},
+    onMessage: function (messageData) {},
+    });
+</script>
